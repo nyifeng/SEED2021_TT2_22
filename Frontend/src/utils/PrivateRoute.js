@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-const PrivateRoute = ({ children, isAuth, ...rest }) {
+const PrivateRoute = ({ children, token, ...rest }) => {
     return (
         <Route
             {...rest}
             render={(props) => {
-                return isAuth ? 
+                return token ? 
                     children : <Redirect to='/login' />
             }} 
         />

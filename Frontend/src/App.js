@@ -5,6 +5,7 @@ import Footer from './Components/Footer'
 import Home from './Views/Home'
 import Login from './Views/Login';
 import Dashboard from './Views/Dashboard';
+import PrivateRoute from './utils/PrivateRoute';
 
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
           return;
       };
       setState({
-          token,
-          isAuth: true
+          ...state,
+          isAuth: true,
+          token
       });
   });
 
@@ -30,16 +32,16 @@ function App() {
         <div className="relative pb-10 min-h-screen">
             <Header />
                 <Switch>
-                    <Route token={state.token} isAuth={state.isAuth} path='/home'>
+                    <PrivateRoute token={state.token} isAuth={state.isAuth} path='/home'>
                         <Home />
-                    </Route>
+                    </PrivateRoute>
                     <Route path='/login'>
                         <Login />
                     </Route>
 
-                    <Route token={state.token} isAuth={state.isAuth} path='/dashboard'>
+                    <PrivateRoute token={state.token} isAuth={state.isAuth} path='/dashboard'>
                         <Dashboard />
-                    </Route>
+                    </PrivateRoute>
 
                 </Switch>
             <Footer />
