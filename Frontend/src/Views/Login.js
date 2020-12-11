@@ -46,7 +46,7 @@ function Login(props) {
                     redirectToHome();
                 })
                 .catch((err) => {
-                    console.log("AXIOS ERROR: ", err)
+                    alert(err)
                 });
     };
 
