@@ -162,12 +162,6 @@ export default function Dashboard() {
                <Transactions />
               </Paper>
             </Grid>
-            {/* Account Balance */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-             
-              </Paper>
-            </Grid>
           </Grid>
 
         </Container>
