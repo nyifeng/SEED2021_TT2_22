@@ -4,6 +4,7 @@ import axios from 'axios'
 export function useAxiosPost(url, data){
 
     const [request, setRequest] = useState({
+      loading: false,
       data: null,
     })
 
@@ -22,6 +23,7 @@ export function useAxiosPost(url, data){
     axios.post(proxyurl+url, data, config )
     .then(response => {
       setRequest({
+          loading: true,
           data: response.data,
       })
     })

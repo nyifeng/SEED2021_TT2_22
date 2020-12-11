@@ -1,11 +1,13 @@
 {
-  "name": "learning-react",
+  "name": "tecktreck2-rm22-2020",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -13,6 +15,7 @@
     "axios": "^0.19.2",
     "postcss-cli": "^7.1.0",
     "react": "^16.13.1",
+    "react-currency-format": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
