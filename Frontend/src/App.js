@@ -1,15 +1,26 @@
 import React from 'react';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Home from './Views/Home'
+import Login from './Views/Login';
 
 function App() {
   return (
-    <div className="relative pb-10 min-h-screen">
-        <Header />
-        <Home />
-        <Footer />
-    </div>
+    <Router>
+        <div className="relative pb-10 min-h-screen">
+            <Header />
+                <Switch>
+                    <Route path='/home'>
+                        <Home />
+                    </Route>
+                    <Route path='/login'>
+                        <Login />
+                    </Route>
+                </Switch>
+            <Footer />
+        </div>
+    </Router>
   );
 }
 
