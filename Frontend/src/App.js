@@ -4,9 +4,12 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Home from './Views/Home'
 import Login from './Views/Login';
+import Dashboard from './Views/Dashboard';
+
 
 function App() {
   return (
+
     <Router>
         <div className="relative pb-10 min-h-screen">
             <Header />
@@ -17,10 +20,16 @@ function App() {
                     <Route path='/login'>
                         <Login />
                     </Route>
+
+                    <Route path='/dashboard'>
+                        <Dashboard />
+                    </Route>
+
                 </Switch>
             <Footer />
         </div>
     </Router>
+
   );
 }
 

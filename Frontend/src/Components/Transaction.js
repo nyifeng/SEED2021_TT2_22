@@ -45,7 +45,16 @@ export default function Transaction (){
                 }
 
             })
-
+            /* Add transaction view*/
+            let transactionUpdate = {
+                eGift: false,
+                dateTime: newDate(),
+                custID: 22,
+                expensesCat: "MISC",
+                amount: number,
+                message: "Thanks. :)",
+                payeeID: 1
+            }
         }
     }
 
@@ -55,7 +64,7 @@ export default function Transaction (){
                     <form onSubmit ={e => {e.preventDefault(); handleTransaction(e);}}> 
                     <div className="form-group" >
                         <label>Avaliable Balance</label>
-                        <input type="disabled" disabled className="form-control" value={bal}/>
+                        <CurrencyFormat thousandSeparator={true} prefix={'$'} disabled className="form-control" value={bal}/>
                     </div>
                     
                     <div className="form-group" >
