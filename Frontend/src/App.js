@@ -1,17 +1,7 @@
 import React from 'react';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Header from './Components/Header'
 import Footer from './Components/Footer'
-<<<<<<< Updated upstream
-import Dashboard from './Views/Dashboard'
-
-function App() {
-  return (
-    <div className="relative pb-10 min-h-screen">
-        <Header />
-        <Dashboard />
-        <Footer />
-    </div>
-=======
 import Home from './Views/Home'
 import Login from './Views/Login';
 import Dashboard from './Views/Dashboard';
@@ -19,6 +9,7 @@ import Dashboard from './Views/Dashboard';
 
 function App() {
   return (
+
     <Router>
         <div className="relative pb-10 min-h-screen">
             <Header />
@@ -29,14 +20,16 @@ function App() {
                     <Route path='/login'>
                         <Login />
                     </Route>
+
                     <Route path='/dashboard'>
                         <Dashboard />
                     </Route>
+
                 </Switch>
             <Footer />
         </div>
     </Router>
->>>>>>> Stashed changes
+
   );
 }
 
