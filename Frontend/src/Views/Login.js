@@ -52,7 +52,7 @@ function Login(props) {
     };
 
     const redirectToHome = () => {
-        props.history.push('/home');
+        props.history.push('/dashboard');
     };
 
     return (
