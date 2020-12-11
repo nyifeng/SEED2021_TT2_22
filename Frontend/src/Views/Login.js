@@ -43,6 +43,7 @@ function Login(props) {
                     if (response.status !== 200) {
                         throw new Error("Error logging in!");
                     };
+                    localStorage.setItem('token', 'Dummy DBS token');
                     redirectToHome();
                 })
                 .catch((err) => {
