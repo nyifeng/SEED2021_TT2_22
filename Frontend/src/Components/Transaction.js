@@ -48,7 +48,7 @@ export default function Transaction (){
             /* Add transaction view*/
             let transactionUpdate = {
                 eGift: false,
-                dateTime: newDate(),
+                dateTime: '',
                 custID: 22,
                 expensesCat: "MISC",
                 amount: number,
