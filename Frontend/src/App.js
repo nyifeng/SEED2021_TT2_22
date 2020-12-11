@@ -14,10 +14,7 @@ function App() {
         <div className="relative pb-10 min-h-screen">
             <Header />
                 <Switch>
-                    <Route path='/home'>
-                        <Home />
-                    </Route>
-                    <Route path='/login'>
+                    <Route exact path="/">
                         <Login />
                     </Route>
 
