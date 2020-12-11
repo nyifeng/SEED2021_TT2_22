@@ -1,0 +1,7 @@
+{
+  "name": "Backend",
+  "version": "1.0.0",
+  "description": "dbs-seed-backend",
+  "main": "index.js",
+  "license": "MIT"
+}
