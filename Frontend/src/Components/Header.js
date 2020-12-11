@@ -1,5 +1,4 @@
 import React from 'react'
-import Navigation from './Navigation'
 import {Link} from 'react-router-dom'
 
 function Header(){
@@ -9,7 +8,6 @@ function Header(){
                 Group 22 E-Wallet
             </Link>
 
-            <Navigation />
         </header>
     )
 }
