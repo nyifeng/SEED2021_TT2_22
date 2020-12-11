@@ -17,6 +17,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems} from './listItems';
 import Transactions from '../Components/Transaction';
+import TransactionHistory from '../Components/TransactionHistory';
 
 
 
@@ -159,7 +160,10 @@ export default function Dashboard() {
             {/* Transactions */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-               <Transactions />
+                <Transactions />
+              </Paper>
+              <Paper className={fixedHeightPaper}>
+                <TransactionHistory />
               </Paper>
             </Grid>
           </Grid>

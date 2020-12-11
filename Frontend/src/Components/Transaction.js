@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CurrencyFormat from 'react-currency-format';
 import {useAxiosPost} from '../Hooks/HttpPosts';
 import axios from 'axios';
+import TransactionHistory from './TransactionHistory';
 
 export default function Transaction (){
     let data = {custID:22}
@@ -30,8 +31,17 @@ export default function Transaction (){
             axios.post('https://cors-anywhere.herokuapp.com/https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020/accounts/update', newData, config)
             .then(res =>{
                 console.log(res);
+                 /* Add transaction view*/
+                let transactionUpdate = {
+                    eGift: false,
+                    dateTime: '',
+                    custID: 22,
+                    expensesCat: "MISC",
+                    amount: number,
+                    message: "Thanks. :)",
+                    payeeID: 1
+            }
                 window.location.reload(false);
-                /*history.push('/'); */
             },
             err =>{
                 if(err.response){
@@ -45,39 +55,30 @@ export default function Transaction (){
                 }
 
             })
-            /* Add transaction view*/
-            let transactionUpdate = {
-                eGift: false,
-                dateTime: '',
-                custID: 22,
-                expensesCat: "MISC",
-                amount: number,
-                message: "Thanks. :)",
-                payeeID: 1
-            }
+           
         }
     }
 
-        return (
-            <div className="transaction-inner">
-                    
-                    <form onSubmit ={e => {e.preventDefault(); handleTransaction(e);}}> 
-                    <div className="form-group" >
-                        <label>Avaliable Balance</label>
-                        <CurrencyFormat thousandSeparator={true} prefix={'$'} disabled className="form-control" value={bal}/>
-                    </div>
-                    
-                    <div className="form-group" >
-                        <label>Transfer to</label>
-                        <input type="text" className="form-control" placeholder="Mobile Numer / UEN" />
-                    </div>
-                    <div className="form-group" >
-                        <label>Transfer amount</label>
-                        <CurrencyFormat className="form-control" thousandSeparator={true} prefix={'$'}  placeholder="$0.00"/>
-                    </div>
-                    <button type="submit" className="btn btn-primary btn-block">Transfer</button>
-                </form>
-            </div>
+    return (
+        <div className="transaction-inner">
+                <form onSubmit ={e => {e.preventDefault(); handleTransaction(e);}}> 
+                <div className="form-group" >
+                    <label>Available Balance</label>
+                    <CurrencyFormat thousandSeparator={true} prefix={'$'} disabled className="form-control" value={bal}/>
+                </div>
+                
+                <div className="form-group" >
+                    <label>Transfer to</label>
+                    <input type="text" className="form-control" placeholder="Mobile Numer / UEN" />
+                </div>
+                <div className="form-group" >
+                    <label>Transfer amount</label>
+                    <CurrencyFormat className="form-control" thousandSeparator={true} prefix={'$'}  placeholder="$0.00"/>
+                </div>
+                <button type="submit" className="btn btn-primary btn-block">Transfer</button>
+            </form>
+            <TransactionHistory message="1234" />
+        </div>
+    );
 
-        );
 }
